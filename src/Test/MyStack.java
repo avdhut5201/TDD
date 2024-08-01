@@ -23,6 +23,12 @@ public class MyStack {
         return element[size--];
     }
 
+    public int peek() {
+        if (isEmpty())
+            throw  new Underflow();
+        return  element[size];
+    }
+
     public  class Underflow  extends  RuntimeException{
     }
 }

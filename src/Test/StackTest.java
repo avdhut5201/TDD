@@ -18,25 +18,25 @@ public class StackTest {
    }
 
 
-    @Test
+    @Test // This one is from video
     public void newStack_isEmpty() throws Exception{
         assertTrue(myStack.isEmpty());
 
     }
-    @Test
+    @Test // This too
     public  void AfetrOnepush_StackIs_NotEmpty() throws Exception{
         myStack.push(10);
         assertFalse(myStack.isEmpty());
     }
 
-    @Test
+    @Test //This too
     void willThrowUnderflow_WhenEmptyStackisPopped() throws  Exception {
         assertThrows(MyStack.Underflow.class, () -> {
             myStack.pop();
         });
     }
 
-    @Test
+    @Test //This too
     public  void After_OnePush_OnePop_StackWillBe_Empty() throws  Exception{
        myStack.push(0);
        myStack.pop();
@@ -44,7 +44,7 @@ public class StackTest {
 
     }
 
-    @Test
+    @Test //This too
     public  void After_TwoPush_OnePop_StackWillBe_NotEmpty() throws  Exception{
         myStack.push(0);
         myStack.push(10);
@@ -53,7 +53,7 @@ public class StackTest {
 
     }
 
-    @Test
+    @Test //This too
     public  void PushX_PopX() throws  Exception{
        myStack.push(99);
        assertEquals(99, myStack.pop())  ;
@@ -61,7 +61,8 @@ public class StackTest {
         assertEquals(98, myStack.pop())  ;
 
     }
-    @Test
+    @Test // This one I have wrote it myself, In last two tests we did achieved the LIFO ,
+         // but it was partial in this one I have completely achieved it  //
     public void pushTwice_PopTwice() throws Exception{
         myStack.push(99);
         myStack.push(98);
@@ -70,4 +71,21 @@ public class StackTest {
 
 
     }
+
+
+    @Test //This one is also designed by me although I feel redundant
+    void willThrowUnderflow_WhenEmptyStackisPeeked() throws  Exception {
+        assertThrows(MyStack.Underflow.class, () -> {
+            myStack.peek();
+        });
+    }
+
+    @Test // This too is designed by me
+    void Peek_the_top_element() throws  Exception {
+       myStack.push(10);
+       myStack.push(20);
+       assertEquals(20,myStack.peek());
+    }
+
+
 }
